@@ -1,0 +1,44 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="col-lg-1">
+
+</div>
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Número de Catrastro</th>
+        <th scope="col">Municipio</th>
+        <th scope="col">Documento del Propietario</th>
+        <td>Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+        {% for finca in object_list %}
+          <tr class="table-light">
+            <th scope="row">{{finca.numero_catrastro}}</th>
+            <td>{{finca.municipio}}</td>
+            <td>{{finca.propietario.documento}}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'finca:finca_editar' finca.pk %}">Editar</a>
+                <a class="btn btn-danger"  href="{% url 'finca:finca_eliminar' finca.pk %}">Eliminar</a>
+              </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <h1>No hay registros de fincas</h1>
+      {% endif %}
+    </tbody>
+  </table>
+  <ul class="pager">
+    {% if page_obj.has_previous %}
+      <a class="btn btn-success" href="?page={{ page_obj.previous_page_number }}">Previo</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+  	    <a class="btn btn-success" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </ul>
+</div>
+{% endblock content %}

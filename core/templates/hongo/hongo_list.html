@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="col-lg-1">
+
+</div>
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Código de producto Hogo</th>
+        <th scope="col">Nombre de producto Hongo</th>
+        <th scope="col">Registro ICA</th>
+        <th scope="col">Frecuencia de Aplicación</th>
+        <th scope="col">Nombre Hongo</th>
+        <th scope="col">Periodo de Carencia</th>
+        <th scope="col">Valor del Producto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+        {% for hongo in object_list %}
+          <tr class="table-light">
+            <th scope="row">{{hongo.codigo_producto_control}}</th>
+            <td>{{hongo.nombre_producto_control}}</td>
+            <td>{{hongo.registro_ica_producto_control}}</td>
+            <td>{{hongo.frecuencia_producto_control}}</td>
+            <td>{{hongo.nombre_hongo}}</td>
+            <td>{{hongo.carencia_periodo_hongo}}</td>
+            <td>{{hongo.valor_producto_control}}</td>
+              <td>
+                <a class="btn btn-primary" href="{% url 'hongo:hongo_editar' hongo.pk %}">Editar</a>
+              </td>
+              <td>
+                <a class="btn btn-danger"  href="{% url 'hongo:hongo_eliminar' hongo.pk %}">Eliminar</a>
+              </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <h1>No hay registros de productores</h1>
+      {% endif %}
+    </tbody>
+  </table>
+  <ul class="pager">
+    {% if page_obj.has_previous %}
+      <a class="btn btn-success" href="?page={{ page_obj.previous_page_number }}">Previo</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+  	    <a class="btn btn-success" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  <form method="POST">{% csrf_token %}
+    <h3>Desea eliminar el vivero {{object.codigo_vivero}} en el nombre {{object.nombre_vivero}}?</h3>
+    <button type="submit" class="btn btn-danger">Si, eliminar</button>
+    <a class="btn btn-success" href="{% url 'vivero:vivero_listar'%}">Cancelar</a>
+  </form>
+{% endblock content %}

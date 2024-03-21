@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-3">Fecha de la labor {{object.fecha_labor}}</h1>
+    <p class="lead">Se aplicó en el cultivo {{object.cultivo.nombre_cultivo}}.</p>
+    <hr class="my-4">
+    <p>con la descripción {{object.descripcion_labor}}</p>
+    <p>con el producto {{object.codigo_producto_control}}</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'laborPlaga:laborPlaga_listar' %}" role="button">Regresar</a>
+    </p>
+  </div>
+{% endblock content %}

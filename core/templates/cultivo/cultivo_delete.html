@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  <form method="POST">{% csrf_token %}
+    <h3>Desea eliminar la finca {{object.codigo_cultivo}} en el nombre {{object.nombre_cultivo}}?</h3>
+    <button type="submit" class="btn btn-danger">Si, eliminar</button>
+    <a class="btn btn-success" href="{% url 'cultivo:cultivo_listar'%}">Cancelar</a>
+  </form>
+{% endblock content %}

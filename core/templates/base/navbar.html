@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productores</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'productor:productor_listar' %}">Listar</a>
+              <a class="dropdown-item" href="{% url 'productor:productor_crear' %}">Crear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Fincas</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'finca:finca_listar' %}">Listar</a>
+              <a class="dropdown-item" href="{% url 'finca:finca_crear' %}">Crear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cultivos</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'cultivo:cultivo_listar' %}">Listar</a>
+              <a class="dropdown-item" href="{% url 'cultivo:cultivo_crear' %}">Crear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Viveros</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'vivero:vivero_listar' %}">Listar</a>
+              <a class="dropdown-item" href="{% url 'vivero:vivero_crear' %}">Crear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Producto Control</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'fertilizante:fertilizante_listar' %}">Fertilizante Listar</a>
+              <a class="dropdown-item" href="{% url 'fertilizante:fertilizante_crear' %}">Fertilizante Crear</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'hongo:hongo_listar' %}">Hongo Listar</a>
+              <a class="dropdown-item" href="{% url 'hongo:hongo_crear' %}">Hongo Crear</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'plaga:plaga_listar' %}">Plaga Listar</a>
+              <a class="dropdown-item" href="{% url 'plaga:plaga_crear' %}">Plaga Crear</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Labor</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'laborFertilizante:laborFertilizante_listar' %}">Fertilizante Listar</a>
+              <a class="dropdown-item" href="{% url 'laborFertilizante:laborFertilizante_crear' %}">Fertilizante Crear</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'laborHongo:laborHongo_listar' %}">Hongo Listar</a>
+              <a class="dropdown-item" href="{% url 'laborHongo:laborHongo_crear' %}">Hongo Crear</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'laborPlaga:laborPlaga_listar' %}">Plaga Listar</a>
+              <a class="dropdown-item" href="{% url 'laborPlaga:laborPlaga_crear' %}">Plaga Crear</a>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  

@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="col-lg-1">
+
+</div>
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Código de producto Fertilizante</th>
+        <th scope="col">Nombre de producto Fertilizante</th>
+        <th scope="col">Registro ICA</th>
+        <th scope="col">Frecuencia de Aplicación</th>
+        <th scope="col">Valor del Fertilizante</th>
+        <th scope="col">Última Aplicación</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+        {% for fertilizante in object_list %}
+          <tr class="table-light">
+            <th scope="row">{{fertilizante.codigo_producto_control}}</th>
+            <td>{{fertilizante.nombre_producto_control}}</td>
+            <td>{{fertilizante.registro_ica_producto_control}}</td>
+            <td>{{fertilizante.frecuencia_producto_control}}</td>
+            <td>{{fertilizante.valor_producto_control}}</td>
+            <td>{{fertilizante.ultima_aplicacion_fertilizante}}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'fertilizante:fertilizante_editar' fertilizante.pk %}">Editar</a>
+                <a class="btn btn-danger"  href="{% url 'fertilizante:fertilizante_eliminar' fertilizante.pk %}">Eliminar</a>
+              </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <h1>No hay registros de productores</h1>
+      {% endif %}
+    </tbody>
+  </table>
+  <ul class="pager">
+    {% if page_obj.has_previous %}
+      <a class="btn btn-success" href="?page={{ page_obj.previous_page_number }}">Previo</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+  	    <a class="btn btn-success" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </ul>
+</div>
+{% endblock content %}

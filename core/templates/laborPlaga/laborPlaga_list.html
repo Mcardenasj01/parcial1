@@ -1,0 +1,44 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="col-lg-1">
+
+</div>
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Fecha de Labor</th>
+        <th scope="col">Cultivo</th>
+        <th scope="col">Código de Labor</th>
+        <td>Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+        {% for laborPlaga in object_list %}
+          <tr class="table-light">
+            <td>{{laborPlaga.fecha_labor}}</td>
+            <td>{{laborPlaga.cultivo.nombre_cultivo}}</td>
+            <th scope="row">{{laborPlaga.codigo_producto_control}}</th>
+            <td>
+                <a class="btn btn-primary" href="{% url 'laborPlaga:laborPlaga_editar' laborPlaga.pk %}">Editar</a>
+                <a class="btn btn-danger"  href="{% url 'laborPlaga:laborPlaga_detalle' laborPlaga.pk %}">Detalle</a>
+              </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <h1>No hay registros de fincas</h1>
+      {% endif %}
+    </tbody>
+  </table>
+  <ul class="pager">
+    {% if page_obj.has_previous %}
+      <a class="btn btn-success" href="?page={{ page_obj.previous_page_number }}">Previo</a>
+    {% endif %}
+    {% if page_obj.has_next %}
+  	    <a class="btn btn-success" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </ul>
+</div>
+{% endblock content %}
