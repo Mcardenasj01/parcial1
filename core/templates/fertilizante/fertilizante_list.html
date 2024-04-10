@@ -28,9 +28,12 @@
             <td>{{fertilizante.valor_producto_control}}</td>
             <td>{{fertilizante.ultima_aplicacion_fertilizante}}</td>
             <td>
-                <a class="btn btn-primary" href="{% url 'fertilizante:fertilizante_editar' fertilizante.pk %}">Editar</a>
-                <a class="btn btn-danger"  href="{% url 'fertilizante:fertilizante_eliminar' fertilizante.pk %}">Eliminar</a>
+              <a class="btn btn-primary" href="{% url 'fertilizante:fertilizante_editar' fertilizante.pk %}">Editar</a>
               </td>
+              <td>
+              <a class="btn btn-danger"  href="{% url 'fertilizante:fertilizante_eliminar' fertilizante.pk %}">Eliminar</a>
+              </td>
+            </td>
           </tr>
         {% endfor %}
       {% else %}

@@ -22,9 +22,9 @@
             <td>{{laborFertilizante.cultivo.nombre_cultivo}}</td>
             <th scope="row">{{laborFertilizante.codigo_producto_control}}</th>
             <td>
-                <a class="btn btn-primary" href="{% url 'laborFertilizante:laborFertilizante_editar' laborFertilizante.pk %}">Editar</a>
-                <a class="btn btn-danger"  href="{% url 'laborFertilizante:laborFertilizante_detalle' laborFertilizante.pk %}">Detalle</a>
-              </td>
+              <a class="btn btn-primary" href="{% url 'laborFertilizante:laborFertilizante_editar' laborFertilizante.pk %}">Editar</a>
+              <a class="btn btn-danger"  href="{% url 'laborFertilizante:laborFertilizante_detalle' laborFertilizante.pk %}">Detalle</a>
+            </td>
           </tr>
         {% endfor %}
       {% else %}

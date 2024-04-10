@@ -28,9 +28,13 @@
             <td>{{plaga.carencia_plaga}}</td>
             <td>{{plaga.valor_producto_control}}</td>
             <td>
+              <td>  
                 <a class="btn btn-primary" href="{% url 'plaga:plaga_editar' plaga.pk %}">Editar</a>
+              </td>
+              <td>
                 <a class="btn btn-danger"  href="{% url 'plaga:plaga_eliminar' plaga.pk %}">Eliminar</a>
               </td>
+            </td>
           </tr>
         {% endfor %}
       {% else %}

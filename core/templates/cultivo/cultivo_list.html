@@ -13,17 +13,19 @@
         <td>Acciones</td>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bg-info">
       {% if object_list %}
         {% for cultivo in object_list %}
-          <tr class="table-light">
-            <th scope="row">{{cultivo.codigo_cultivo}}</th>
-            <td>{{cultivo.nombre_cultivo}}</td>
-            <td>
-                <a class="btn btn-primary" href="{% url 'cultivo:cultivo_editar' cultivo.pk %}">Editar</a>
-                <a class="btn btn-danger"  href="{% url 'cultivo:cultivo_eliminar' cultivo.pk %}">Eliminar</a>
-              </td>
-          </tr>
+          <div class="row align-items-center text-bg-primary p-3">
+              <tr class="table-light">
+                <th scope="row">{{cultivo.codigo_cultivo}}</th>
+                <td>{{cultivo.nombre_cultivo}}</td>
+                <td class="col-md-2 offset-md-2">
+                  <a class="btn btn-primary" href="{% url 'cultivo:cultivo_editar' cultivo.pk %}">Editar</a>
+                  <a class="btn btn-danger"  href="{% url 'cultivo:cultivo_eliminar' cultivo.pk %}">Eliminar</a>
+                </td>
+              </tr>
+          </div>
         {% endfor %}
       {% else %}
         <h1>No hay registros de fincas</h1>
